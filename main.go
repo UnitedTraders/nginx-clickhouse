@@ -7,14 +7,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Sirupsen/logrus"
-	"github.com/mintance/nginx-clickhouse/clickhouse"
-	configParser "github.com/mintance/nginx-clickhouse/config"
-	"github.com/mintance/nginx-clickhouse/nginx"
+	"github.com/UnitedTraders/nginx-clickhouse/clickhouse"
+	configParser "github.com/UnitedTraders/nginx-clickhouse/config"
+	"github.com/UnitedTraders/nginx-clickhouse/nginx"
 	"github.com/papertrail/go-tail/follower"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"github.com/sirupsen/logrus"
 )
 
 var (

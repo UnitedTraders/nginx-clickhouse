@@ -1,20 +1,21 @@
 package nginx
 
 import (
-	"github.com/mintance/nginx-clickhouse/config"
-	"github.com/satyrius/gonx"
+	"fmt"
 	"io"
 	"strconv"
 	"strings"
 	"time"
-	"github.com/Sirupsen/logrus"
-	"fmt"
+
+	"github.com/UnitedTraders/nginx-clickhouse/config"
+	"github.com/satyrius/gonx"
+	"github.com/sirupsen/logrus"
 )
 
 func GetParser(config *config.Config) (*gonx.Parser, error) {
 
 	// Use nginx config file to extract format by the name
-	nginxConfig := strings.NewReader(fmt.Sprintf("%s%s%s",`
+	nginxConfig := strings.NewReader(fmt.Sprintf("%s%s%s", `
 		http {
 			log_format   main  '`, config.Nginx.LogFormat, `';
 		}
